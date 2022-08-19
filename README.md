@@ -78,6 +78,7 @@ Below is a water tank that has two DC motors where the motor one is used to pump
 ![rsz_1whatsapp_image_2022-08-19_at_125628_pm](https://user-images.githubusercontent.com/111522052/185615715-ad9180ca-4384-4066-9175-73f90f97ed55.jpg)
 
 ## Results
+According to the above displayed code the distance between the water level will be calculated. MOTOR1  and MOTOR2 will work to the given outputs of the PIC16F877A Microcontroller. From the distance 35cm to 25cm the MOTOR1 will be turned ON. And from the distance 25cm to 15cm the MOTOR1 will again be turned ON. After 15cm the timer1 interrupt flag will be logic high. So when the calculated distance is less than 15cm MOTOR1 will turned OFF and the MOTOR2 will be turned ON for 500 milliseconds and it will turned OFF. So, the PCB circuit will work according to the updated truth table values.
 
 
 ## Code Used for The Full Implementation
