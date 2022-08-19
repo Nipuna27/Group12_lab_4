@@ -30,4 +30,5 @@
 - Results
 - Discussion
 - References
-
+## Task
+Below is a water tank that has two DC motors where the motor one is used to pump the water into the tank the motor two is used to suck the water out from the water tank and there are three sensors that are used to measure the water level of the tank. The operations of the two DC motors according to the switch state is given in a table right after the diagram.
