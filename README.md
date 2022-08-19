@@ -14,7 +14,7 @@
     Details of the student/ID Number Name (As per the institute records )
 - Wijeruwan K.N.N-EN21483592
 - Siriwardhana A.N.K-EN21477584
-- Bandusena R.P.N.M -EN21484032
+- Bandusena R.P.N.M -EN21477102
 
 
 ## Content
