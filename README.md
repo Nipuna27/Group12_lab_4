@@ -48,6 +48,18 @@ The main objective of this lab is for you to develop a small water level control
 - Motors
 
 ## Introduction
+The objective of the project is to build a water level detector which can regulate the water level using a suitable sensor with the aid of the PIC16F877A Microcontroller. In this system, Ultrasonic Sensor was used as the sensor to detect the water level.
+  
+An ultrasonic sensor is an instrument that measures the distance to an object using ultrasonic sound waves. An ultrasonic sensor uses a transducer to send and receive ultrasonic pulses that relay back information about an object’s proximity. High-frequency sound waves reflect from boundaries to produce distinct echo patterns. 
+
+Ultrasonic sensors work by sending out a sound wave(ultrasonic) at a frequency above the range of human hearing.  The transducer of the sensor acts as a microphone to receive and send the ultrasonic sound. The sensor determines the distance to a target by measuring time lapses between the sending and receiving of the ultrasonic pulse. 
+
+By calculating the travel time and the speed of sound, the distance can be calculated. The formula for this calculation is D = ½ T x C (where D is the distance, T is the time, and C is the speed of sound ~ 343 meters/second). This will give out the signals for the relevant distances to the Microcontroller. 
+(For the implementation the IR sensor was not selected as it wouldn’t work perfectly with the water level conditions.)
+
+The signals from the sensor will be transferred to the Microcontroller as the input signals. The PIC microcontroller PIC16F877A is one of the most renowned microcontrollers in the industry. This microcontroller is very convenient to use, the coding or programming of this controller is also easier. It has a total number of 40 pins and there are 33 pins for input and output. PIC16F877A is used in many pic microcontroller projects. PIC16F877A also have much application in digital electronics circuits. From this Microcontroller it gives the particular outputs to Switch ON or Switch OFF the DC motors.
+
+According to the given outputs from the Microcontroller the DC motors will work to regulate the water level of the tank.
 
 
 ## Task
