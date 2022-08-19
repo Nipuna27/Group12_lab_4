@@ -55,6 +55,7 @@ Below is a water tank that has two DC motors where the motor one is used to pump
 ![Screenshot 2022-08-19 143343](https://user-images.githubusercontent.com/111522052/185584824-6dd93e77-e4cc-489c-8773-6fd93fced128.png)
 
 ## The PCB Design
-![rsz_11whatsapp_image_2022-08-17_at_91210_pm](https://user-images.githubusercontent.com/111522052/185592679-b27002d9-9524-4bc6-b30a-8fde0faa6e94.jpg)
+![rsz_11whatsapp_image_2022-08-17_at_91210_pm](https://user-images.githubusercontent.com/111522052/185592679-b27002d9-9524-4bc6-b30a-8fde0faa6e94.jpg)![rsz_whatsapp_image_2022-08-17_at_91313_pm](https://user-images.githubusercontent.com/111522052/185592899-5dc541b0-0cfc-4ebb-966c-e235f837db4c.jpg)
+
 
 
