@@ -74,4 +74,5 @@ Below is a water tank that has two DC motors where the motor one is used to pump
 ![rsz_whatsapp_image_2022-08-16_at_123600_pm_1](https://user-images.githubusercontent.com/111522052/185598110-16b8d5f4-856a-4c76-b778-b8fd22fbf87d.jpg)
 
 ## Images of the realtime implementation
+![rsz_2whatsapp_image_2022-08-19_at_10500_pm](https://user-images.githubusercontent.com/111522052/185614882-009b7c14-7e89-4bd1-af2d-6f8a46a4eaf9.jpg)
 
