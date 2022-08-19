@@ -1,1 +1,2 @@
-# Group12_lab_4
+# lab_4
+#Microcomputers group_12
