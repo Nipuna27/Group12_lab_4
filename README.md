@@ -78,4 +78,107 @@ Below is a water tank that has two DC motors where the motor one is used to pump
 ![rsz_1whatsapp_image_2022-08-19_at_125628_pm](https://user-images.githubusercontent.com/111522052/185615715-ad9180ca-4384-4066-9175-73f90f97ed55.jpg)
 
 ## Code Used for The Full Implementation
+    // CONFIG
+    #pragma config FOSC = HS      // Oscillator Selection bits (HS oscillator)
+    #pragma config WDTE = OFF     // Watchdog Timer Enable bit (WDT disabled)
+    #pragma config PWRTE = ON     // Power-up Timer Enable bit (PWRT disabled)
+    #pragma config BOREN = ON     // Brown-out Reset Enable bit (BOR disabled)
+    #pragma config LVP = OFF      // Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit (RB3 is digital I/O, HV on MCLR must be used for programming)
+    #pragma config CPD = OFF      // Data EEPROM Memory Code Protection bit (Data EEPROM code protection off)
+    #pragma config WRT = OFF      // Flash Program Memory Write Enable bits (Write protection off; all program memory may be written to by EECON control)
+    #pragma config CP = OFF       // Flash Program Memory Code Protection bit (Code protection off)
+
+    // #pragma config statements should precede project file includes.
+    // Use project enums instead of #define for ON and OFF.
+
+    #include <xc.h>
+    #define _XTAL_FREQ 20000000
+    #define trigger RB1
+    #define echo RB0
+
+
+    void __interrupt() timer_isr (void){
+    
+    if(TMR1IF==1){
+       
+        RC5=1;
+        RC4=0;
+        __delay_ms(500);
+        RC5=0;
+        
+        TMR1IF=0;        
+        }
+                
+    }
+
+    void main (void){
+    TRISB0=1;  // INTERRUPT PIN, ECHO SENSER
+    TRISB1=0;  //TRIGER PIN
+    TRISC4=0;  //MOTER 2
+    TRISC5=0;   //INTERRUPT LED MOTER 1
+    T1CON=0X20;   // 1:4- PRES-SCALAR AND SET INTERNAL CLOCK
+    RC4=0;
+    RC5=0;
+    
+    TMR1IE=1; //Enable timer interrupt bit in PIE1 register
+    GIE=1;   //GLOBAL INTERRUPT ENABLE BIT=1(ACCESS TO INTERRUPT)
+    PEIE=1;  //PERIPERAL INTERRUPT ENABLE BIT=1(CONTROLL THE EXTERNAL DEVICES USING INTERRUPT)
+    TMR1IF=0;   
+    // T1SYNC=0;
+   
+    int time_taken;
+    int distance;
+    
+    while(1){
+  
+        TMR1H = 0;   //CLEAR THE TIMER1 2 REGISTERS VALUES 
+        TMR1L = 0;
+               
+        trigger = 1;
+        __delay_ms(10);
+        trigger = 0;
+        
+        
+        while(echo==0);
+             
+        TMR1ON = 1;
+        
+        while(echo==1);
+        
+        TMR1ON = 0;
+       //Echo pin will stay low till the wave return back
+        
+        time_taken = (TMR1L | (TMR1H<<8));  //resulting value will be saved in the registers TMR1H and TMR1L
+        distance = (0.0272*time_taken)/2;
+        
+        
+        time_taken = time_taken*0.8;  //in micro seconds
+        
+        
+       if(distance<35 && 25<distance ){
+           RC4=1;
+           
+       } 
+       else{
+           RC4=0;
+       }
+        
+        
+       if(distance<25 && 15<=distance){
+           RC4=1;
+           
+       } 
+       else{   
+           RC4=0;
+
+       }
+
+       
+       if(distance<=15){
+           TMR1IF=1;     
+       }              
+    } 
+           
+    return;
+    }
 
