@@ -22,14 +22,10 @@
 - Apparatus
 - Introduction
 - Task
-- Operation Table
-- Breadboard Implementation
 - The PCB Design
 - An Image of the Real Implementation
 - Code
 - Results
-- Discussion
-- References
 
 ## Objective
 The main objective of this lab is for you to develop a small water level controlling system of a water tank using the knowledge of interrupts and other programming techniques of PIC16f877a from all the labs we did throughout the course. 
